@@ -2,6 +2,14 @@
 <main class="contact">
     <h1 class="contact__title">{{ .Title }}</h1>
     <p class="contact__content">{{ .Description }}</p>
+    <!-- UNDO THIS LATER.-->
+    <h1 id="espa-ntilde-ol">Espa&ntilde;ol</h1>
+
+    <p>El horario de Marilu es entre las 8 am y las 4 pm. Durante estos tiempos, se pueden programar terapias.</p>
+
+    <h1 id="english">English</h1>
+
+    <p>Marilu's hours are between 8 am and 4 pm. During these times, therapies can be scheduled.</p>
 
     {{ if $.Site.Params.form.netlify }}
     <form name="contact" method="POST" data-netlify="true" class="contact__form" id="contactForm">
