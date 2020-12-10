@@ -25,6 +25,7 @@
 
 .header__title__logo {
 	max-width: 7rem;
+	min-width: 5rem;
 	vertical-align: middle;
 	width: 100%;
 }
