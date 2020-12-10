@@ -6,7 +6,14 @@
 @media only screen and (max-width: 1024px) {
 	.hero {
 		background-size: 80%;
-		background-position: center 0%;
+		background-position: center -160%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+	.hero {
+		background-size: 80%;
+		background-position: center -120%;
     }
 }
 
