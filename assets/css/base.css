@@ -6,12 +6,12 @@
     --subheader: 1.414rem;
 
     /* Colors */
-    --primary: #1f429b;
-    --primary-dark: #1f429b;
+    --primary:#a602ff;
+    --primary-dark: #ff02d9;
     --primary-light: #ffffff;
     --primary-text: #212121;
     --secondary-text: #ffffff;
-    --accent: #536dfe;
+    --accent: #2802ff;
     --divider: #bdbdbd;
     --white: #fdfdfd;
 
