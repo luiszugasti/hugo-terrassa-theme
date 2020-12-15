@@ -12,6 +12,6 @@
 
 @media only screen and (max-width: 576px) {
     .hero {
-		background-position: center 5%;
+		background-position: center -5%;
 	}
 }
