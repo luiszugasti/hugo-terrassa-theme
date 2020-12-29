@@ -1,4 +1,7 @@
 {{ define "main" }}
+<head>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
 <main class="contact">
     <h1 class="contact__title">{{ .Title }}</h1>
     <p class="contact__content">{{ .Description }}</p>
@@ -51,6 +54,9 @@
                     maxlength="{{ $.Site.Params.form.inputMsgLength }}" id="{{ $.Site.Params.form.inputMsgName }}"
                     arial-labelledby="{{ $.Site.Params.form.InputMsgName }}" required></textarea>
             </div>
+
+            <!-- Recaptcha check -->
+            <div class="g-recaptcha" data-sitekey="6Le0hRkaAAAAAK7NdHtvDLgLlugbrFTF4TSikR60"></div>
 
             <!-- Submit -->
             <div class="contact__field contact__field--submit">
