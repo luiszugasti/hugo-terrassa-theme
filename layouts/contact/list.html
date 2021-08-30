@@ -17,8 +17,7 @@
         <p>Therapies can be scheduled between Monday and Friday, from 8 am to 4 pm.</p>
     </main>
 
-    {{ partial "schedule-form.html" . }}
-
+    {{ if $.Site.Params.form.backupForm }}
     {{ if $.Site.Params.form.netlify }}
     <form name="contact" method="POST" data-netlify="true" class="contact__form" id="contactForm">
         {{ else }}
@@ -75,5 +74,8 @@
             </div>
 
         </form>
+        {{ else }}
+        {{ partial "schedule-form.html" . }}
+        {{ end }}
 </main>
 {{ end }}
