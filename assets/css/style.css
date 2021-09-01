@@ -346,6 +346,7 @@
 	justify-content: flex-start;
 	min-height: 90vh;
 	margin: 0 1.75rem 0;
+	padding-bottom: 100px;
 }
 
 .contact__content {
