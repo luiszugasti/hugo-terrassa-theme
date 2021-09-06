@@ -30,3 +30,9 @@
 
     [formNotWork]
     other = "Form didn't work? Click here"
+
+    [espanol]
+    other = "Spanish"
+
+    [english]
+    other = "English"

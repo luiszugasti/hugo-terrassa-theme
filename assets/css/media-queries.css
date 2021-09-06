@@ -16,6 +16,10 @@
 		width: 40%;
 	}
 
+	.footer {
+		padding: 0;
+	}
+
 	.footer__contact {
 		align-items: start;
 		flex-direction: column;
@@ -33,6 +37,7 @@
 	.copy {
 		align-items: flex-end;
 		padding-right: 4.5rem;
+		text-align: center;
 	}
 }
 
@@ -153,8 +158,12 @@
 	}
 
 	.footer {
-		grid-template-areas: "social" "contact" "copy";
+		grid-template-areas: 
+		"contact" 
+		"copy"
+		"language";
 		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, auto)
 	}
 
 	.footer__social__link {

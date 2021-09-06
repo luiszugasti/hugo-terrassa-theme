@@ -30,3 +30,8 @@
     [formNotWork]
     other = "La forma no trabajo? Haz click aqui"
     
+    [espanol]
+    other = "Español"
+
+    [english]
+    other = "Inglés"

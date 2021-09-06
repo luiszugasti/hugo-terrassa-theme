@@ -1,4 +1,5 @@
 <nav class="menu" aria-label="menu">
+    <!-- Entries list. -->
     <ul class="menu__items" aria-label="menu">
         {{ $current := . }}
         {{ range .Site.Menus.main }}
@@ -9,14 +10,5 @@
             </a>
         </li>
         {{ end }}
-        <li>
-            <div>
-                <ul class="language-list">
-                    {{ range $.Site.Home.AllTranslations }}
-                    <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
-                    {{ end }}
-                </ul>
-            </div>
-        </li>
     </ul>
 </nav>

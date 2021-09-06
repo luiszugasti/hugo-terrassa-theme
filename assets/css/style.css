@@ -416,8 +416,9 @@
 .footer {
 	background-color: var(--primary-dark);
 	display: grid;
+	padding: 0 24%;
 	grid-auto-flow: row;
-	grid-template-areas: "social social social" "contact contact copy";
+	grid-template-areas: "social social social" " language copy contact";
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, auto);
 }
@@ -493,6 +494,25 @@
 .footer__contact__link,
 .footer__contact__link:hover {
 	color: var(--white);
+}
+
+.footer__language {
+	align-items: center;
+	display: flex;
+	grid-area: language;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.footer__language__option {
+	font-variant: small-caps;
+	display:block;
+	color: white;
+}
+
+.footer__language__icon {
+	display: inline;
+	width: 1em;
 }
 
 /* 404 */

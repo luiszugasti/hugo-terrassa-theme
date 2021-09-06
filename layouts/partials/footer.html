@@ -1,13 +1,14 @@
 <footer class="footer">
     {{ if $.Site.Params.social }}
     {{ $items := $.Site.Params.social }}
-    {{ $len := (len $items) }}
+    {{ $itemsLen := (len $items) }}
 
-    {{ if gt $len 0 }}
+    {{ if gt $itemsLen 0 }}
     <div class="footer__social">
         {{ range $k, $v := $items }}
         {{ if $v}}
-        <a href="{{ $v }}" class="footer__social__link" alt="{{ $k }}" target="_blank" aria-label="{{ $v }}" rel="noopener">
+        <a href="{{ $v }}" class="footer__social__link" alt="{{ $k }}" target="_blank" aria-label="{{ $v }}"
+            rel="noopener">
             <span>
                 <i class="fab fa-{{ $k }}"></i>
             </span>
@@ -17,6 +18,20 @@
     </div>
     {{ end }}
     {{ end }}
+
+    <div class="footer__language">
+        <ul class="language-list">
+            {{ range $.Site.Home.AllTranslations }}
+            {{ range .Translations }}
+            {{ $lang := (lower (default .Lang .Site.Language.LanguageName))}}
+            <a class="footer__language__option" href="{{ .Permalink }}">{{ T $lang }}
+                <img src="{{ $.Site.BaseURL }}{{printf "/images/"}}{{ $lang }}{{printf " flag.png"}}"
+                    title="{{ T $lang }} flag" class="footer__language__icon">
+            </a>
+            {{ end }}
+            {{ end }}
+        </ul>
+    </div>
 
     <address class="footer__contact">
         {{ if $.Site.Params.contact.email }}
