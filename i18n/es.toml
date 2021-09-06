@@ -1,0 +1,32 @@
+    [langCode]
+    other="es"
+    [whenAreTherapyGiven]
+    other="Las terapias se dan de lunes a viernes entre 8am y 4pm."
+
+    [inputNameLabel]
+    other="Tu nombre."
+
+    [inputNamePlaceholder]
+    other="Juan Smith"
+
+    [inputEmailLabel]
+    other="Tu correo electronico."
+
+    [inputEmailPlaceholder]
+    other="juansmith@email.com"
+
+    [inputPhoneLabel]
+    other = "Tu Numero de Telefono incluyendo tu codigo de area."
+
+    [inputMsgLabel]
+    other = "Por favor provee al menos 3 opciones (qué días, y horas tienes disponibles para tu terapia)."
+    
+    [inputSubmitValue]
+    other = "Enviar"
+
+    [cta]
+    other = "Reserva tu cita"
+
+    [formNotWork]
+    other = "La forma no trabajo? Haz click aqui"
+    

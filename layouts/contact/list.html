@@ -1,20 +1,18 @@
 {{ define "main" }}
 
 <head>
+    {{ if $.Site.Params.form.backupForm }}
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    {{ end }}
 </head>
 <main class="contact">
     <h1 class="contact__title">{{ .Title }}</h1>
     <p class="contact__content">{{ .Description }}</p>
-    <!-- FIXME: Don't hard-code this. -->
+
     <main class="post__body" style="margin-bottom: 3rem;">
-        <h1 id="espa-ntilde-ol">Espa&ntilde;ol</h1>
 
-        <p>Las terapias se dan de lunes a viernes entre 8am y 4pm.</p>
+        <p>{{ T "whenAreTherapyGiven" }}</p>
 
-        <h1 id="english">English</h1>
-
-        <p>Therapies can be scheduled between Monday and Friday, from 8am to 4pm.</p>
     </main>
 
     {{ if $.Site.Params.form.backupForm }}
@@ -27,34 +25,34 @@
 
             <!-- Name -->
             <div class="contact__field contact__field--name">
-                <label for="{{ $.Site.Params.form.inputNameName }}">{{ $.Site.Params.form.inputNameLabel }}</label>
+                <label for="{{ $.Site.Params.form.inputNameName }}">{{ T "inputNameLabel" }}</label>
                 <input type="text" name="{{ $.Site.Params.form.inputNameName }}"
-                    placeholder="{{ $.Site.Params.form.inputNamePlaceholder }}"
+                    placeholder={{ T "inputNamePlaceholder" }}
                     class="contact__form__input contact__form__name" id="{{ $.Site.Params.form.inputNameName }}"
                     aria-labelledby="{{ $.Site.Params.form.inputNameName }}" required>
             </div>
 
             <!-- Phone Number -->
             <div class="contact__field contact__field--tel">
-                <label for="{{ $.Site.Params.form.inputPhoneName }}">{{ $.Site.Params.form.inputPhoneLabel }}</label>
+                <label for="{{ $.Site.Params.form.inputPhoneName }}">{{ T "inputPhoneLabel" }}</label>
                 <input type="tel" name="{{ $.Site.Params.form.inputPhoneName }}"
-                    placeholder="{{ $.Site.Params.form.inputPhonePlaceholder }}"
+                    placeholder={{ T "inputPhonePlaceholder" }}
                     class="contact__form__input contact__form__tel" id="{{ $.Site.Params.form.inputPhoneName }}"
                     aria-labelledby="{{ $.Site.Params.form.InputPhoneName }}" required>
             </div>
 
             <!-- Email -->
             <div class="contact__field contact__field--email">
-                <label for="{{ $.Site.Params.form.inputEmailName }}">{{ $.Site.Params.form.inputEmailLabel }}</label>
+                <label for="{{ $.Site.Params.form.inputEmailName }}">{{ T "inputEmailLabel" }}</label>
                 <input type="email" name="{{ $.Site.Params.form.inputEmailName }}"
-                    placeholder="{{ $.Site.Params.form.inputEmailPlaceholder }}"
+                    placeholder={{ T "inputEmailPlaceholder" }}
                     class="contact__form__input contact__form__email" id="{{ $.Site.Params.form.inputEmailName }}"
                     aria-labelledby="{{ $.Site.Params.form.InputEmailName }}" required>
             </div>
 
             <!-- Message -->
             <div class="contact__field contact__field--msg">
-                <label for="{{ $.Site.Params.form.inputMsgName }}">{{ $.Site.Params.form.inputMsgLabel }}</label>
+                <label for="{{ $.Site.Params.form.inputMsgName }}">{{ T "inputMsgLabel" }}</label>
                 <textarea name="{{ $.Site.Params.form.inputMsgName }}" id="{{ $.Site.Params.form.inputMsgName }}"
                     form="contactForm" maxlength="{{ $.Site.Params.form.inputMsgLength }}"
                     id="{{ $.Site.Params.form.inputMsgName }}" arial-labelledby="{{ $.Site.Params.form.InputMsgName }}"
@@ -69,7 +67,7 @@
             <div class="contact__field contact__field--submit">
                 <button type="submit" class="ripple-btn submit" onclick="cleanForm"
                     aria-label="{{ $.Site.Params.form.inputSubmitValue }}">
-                    {{ $.Site.Params.form.inputSubmitValue }}
+                    {{ T "inputSubmitValue" }}
                 </button>
             </div>
 

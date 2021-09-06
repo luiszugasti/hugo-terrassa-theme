@@ -1,0 +1,32 @@
+    [langCode]
+    other="en"
+
+    [whenAreTherapyGiven]
+    other="Therapies can be scheduled between Monday and Friday, from 8am to 4pm."
+
+    [inputNameLabel]
+    other="Your name."
+
+    [inputNamePlaceholder]
+    other="John Smith"
+
+    [inputEmailLabel]
+    other="Your e-mail address."
+
+    [inputEmailPlaceholder]
+    other="johnsmith@email.com"
+
+    [inputPhoneLabel]
+    other = "Your phone number, including area code."
+
+    [inputMsgLabel]
+    other = "Please provide at least 3 day, time choices to schedule your session."
+
+    [inputSubmitValue]
+    other = "Send"
+
+    [cta]
+    other = "Book a therapy"
+
+    [formNotWork]
+    other = "Form didn't work? Click here"
