@@ -55,8 +55,8 @@
     </address>
 
     <div class="copy">
-        {{ if $.Site.Params.copy.copy }}
-        <p>{{ $.Site.Params.copy.copy }}</p>
+        {{ if .Param "copy.copy" }}
+        <p>{{ .Param "copy.copy" }}</p>
         {{ else }}
         <p>© {{ now.Format "2006" }} - {{ $.Site.Title }}</p>
         {{ end }}
