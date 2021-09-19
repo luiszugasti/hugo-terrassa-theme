@@ -3,12 +3,26 @@
     <ul class="menu__items" aria-label="menu">
         {{ $current := . }}
         {{ range .Site.Menus.main }}
-        <li class="menu__items__item" aria-label="{{ .Name }}">
-            <a href="{{ .URL }}" class="menu__items__item__link {{ if $current.IsMenuCurrent "main" . }}active{{ end }}"
-                alt="{{ .Name }}" role="menuitem">
-                {{ .Name }}
-            </a>
-        </li>
+            <li class="menu__items__item" aria-label="{{ .Name }}">
+                <a href="{{ .URL }}" class="menu__items__item__link {{ if $current.IsMenuCurrent "main" . }}active{{ end }}"
+                    alt="{{ .Name }}" role="menuitem">
+                    {{ .Name }}
+                </a>
+            </li>
+        {{ end }}
+        <!-- Language selection - display the language that is NOT currently being used -->
+        {{ range .Translations }} 
+            {{ $lang := (lower (default .Lang .Site.Language.LanguageName))}}
+            {{ if eq $.Site.Language.LanguageName "English" }} 
+            <li class="menu__items__item" aria-label="{{ T $lang }}">
+                <a class="menu__items__item__link" href="{{ .Permalink }}">{{ T $lang }}</a> 
+            </li>
+            {{ end }}
+            {{ if eq $.Site.Language.LanguageName "Espanol" }}
+            <li class="menu__items__item" aria-label="{{ T $lang }}">
+                <a class="menu__items__item__link" href="{{ .Permalink }}">{{ T $lang }}</a>
+            </li>
+            {{ end }}            
         {{ end }}
     </ul>
 </nav>
