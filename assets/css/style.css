@@ -507,10 +507,11 @@
 .footer__language__option {
 	font-variant: small-caps;
 	display:block;
-	color: white;
+	color: var(--white);
 }
 
 .footer__language__icon {
+	padding-left: 5px;
 	display: inline;
 	width: 1em;
 }
@@ -611,7 +612,6 @@
 	transition: 0s;
 }
 
-/* LUIS CUSTOM STYLE FOR CENTERING IMAGE */
 main>p>img {
 	display: block;
 	margin-left: auto;
