@@ -10,19 +10,9 @@
                 </a>
             </li>
         {{ end }}
-        <!-- Language selection - display the language that is NOT currently being used -->
-        {{ range .Translations }} 
-            {{ $lang := (lower (default .Lang .Site.Language.LanguageName))}}
-            {{ if eq $.Site.Language.LanguageName "English" }} 
-            <li class="menu__items__item" aria-label="{{ T $lang }}">
-                <a class="menu__items__item__link" href="{{ .Permalink }}">{{ T $lang }}</a> 
-            </li>
-            {{ end }}
-            {{ if eq $.Site.Language.LanguageName "Espanol" }}
-            <li class="menu__items__item" aria-label="{{ T $lang }}">
-                <a class="menu__items__item__link" href="{{ .Permalink }}">{{ T $lang }}</a>
-            </li>
-            {{ end }}            
-        {{ end }}
+        
+        {{ .Scratch.Set "liClass" "menu__items__item" }}
+        {{ .Scratch.Set "aClass" "menu__items__item__link" }}
+        {{ partial "lang-link.html" . }}
     </ul>
 </nav>
