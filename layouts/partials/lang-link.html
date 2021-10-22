@@ -1,26 +1,26 @@
-<!-- Language selection - display the language that is NOT currently being used -->
-<!-- {{ if eq (.Scratch.Get "caller") "menu" }} 
-    {{ $liClass := "menu__items__item" }}
-    {{ $aClass := "menu__items__item__link"}}
-{{ else }} 
-    {{ $liClass := "hamburger__items__item" }}
-    {{ $aClass := "hamburger__items__item__link"}}
-{{ end }}}} -->
+{{/* Language selection - display the language that is NOT currently being used */}}
 
-<!-- Scratch variables work, but I think there's got to be a better way. -->
+{{/* Scratch variables work, but I think there's got to be a better way. */}}
 {{ $liClass := (.Scratch.Get "liClass") }}
 {{ $aClass := (.Scratch.Get "aClass") }}
 
-{{ range .Translations }} 
+{{ if $.Site.IsServer }}
+The language is: {{ $.Site.Language.LanguageName }}
+{{/* The range of translation: {{count .Translations}} */}}
+{{ end }}
+
+{{/* I think a better way of tackling this is to create some form of drop down where each language is a link, and if we
+find the current language, we exclude it! */}}
+{{ range .Translations }}
 {{ $lang := (lower (default .Lang .Site.Language.LanguageName))}}
-{{ if eq $.Site.Language.LanguageName "English" }} 
+{{ if eq $.Site.Language.LanguageName "English" }}
 <li class="{{ $liClass }}" aria-label="{{ T $lang }}">
-    <a class="{{ $aClass }}" href="{{ .Permalink }}">{{ T $lang }}</a> 
+    <a class="{{ $aClass }}" href="{{ .Permalink }}">{{ T $lang }}</a>
 </li>
 {{ end }}
 {{ if eq $.Site.Language.LanguageName "Espanol" }}
 <li class="{{ $liClass }}" aria-label="{{ T $lang }}">
     <a class="{{ $aClass }}" href="{{ .Permalink }}">{{ T $lang }}</a>
 </li>
-{{ end }}            
+{{ end }}
 {{ end }}

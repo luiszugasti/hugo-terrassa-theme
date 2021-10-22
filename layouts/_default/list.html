@@ -1,6 +1,27 @@
 {{ define "main" }}
 <main class="content">
-	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "posts") }}
+	{{/* {{ if $.Site.IsServer }}
+	{{ range .Data.Pages.ByDate.Reverse }}
+	{{ printf "%#v" .Type }}
+	{{ end }}
+	{{ or "questions" "preguntas" }}
+	{{ $.Site.Language }}
+	{{ end }} */}}
+
+	{{/* Depending on the language, we paginate on a specific folder */}}
+	{{ $filterValue := "" }}
+
+	{{ if eq $.Site.Language.LanguageName "Espanol" }}
+	{{ $filterValue = "preguntas" }}
+	{{ end }}
+
+	{{ if eq $.Site.Language.LanguageName "English" }}
+	{{ $filterValue = "questions" }}
+	{{ end }}
+
+	{{/* {{ if $.Site.IsServer }} The value of the filter is: {{ $filterValue }} {{ end }} */}}
+
+	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" $filterValue ) }}
 
 	{{ range $paginator.Pages }}
 	{{ .Render "card" }}
