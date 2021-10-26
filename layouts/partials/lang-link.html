@@ -11,7 +11,8 @@ The language is: {{ $.Site.Language.LanguageName }}
 
 {{/* I think a better way of tackling this is to create some form of drop down where each language is a link, and if we
 find the current language, we exclude it! */}}
-{{ range .Translations }}
+{{ if $.Translations }}
+{{ range $.Translations }}
 {{ $lang := (lower (default .Lang .Site.Language.LanguageName))}}
 {{ if eq $.Site.Language.LanguageName "English" }}
 <li class="{{ $liClass }}" aria-label="{{ T $lang }}">
@@ -24,3 +25,15 @@ find the current language, we exclude it! */}}
 </li>
 {{ end }}
 {{ end }}
+{{ end }}
+
+{{/* We need a special case for questions/preguntas. .Translations returns the links to different translated links to
+this same site. However, since we want questions to show in english, and preguntas to show in spanish, this does not
+seem possible. */}}
+{{/* {{ else }}
+{{ if eq $.Site.Language.LanguageName "English" }}
+<li class="{{ $liClass }}" aria-label="Espanol">
+    <a class="{{ $aClass }}" href="{{ .Permalink }}">{{ T $lang }}</a>
+</li>
+{{ end }}
+{{ end }} */}}

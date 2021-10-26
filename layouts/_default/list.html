@@ -9,7 +9,7 @@
 	{{ end }} */}}
 
 	{{/* Depending on the language, we paginate on a specific folder */}}
-	{{ $filterValue := "" }}
+	{{/* {{ $filterValue := "" }}
 
 	{{ if eq $.Site.Language.LanguageName "Espanol" }}
 	{{ $filterValue = "preguntas" }}
@@ -17,11 +17,11 @@
 
 	{{ if eq $.Site.Language.LanguageName "English" }}
 	{{ $filterValue = "questions" }}
-	{{ end }}
+	{{ end }} */}}
 
 	{{/* {{ if $.Site.IsServer }} The value of the filter is: {{ $filterValue }} {{ end }} */}}
 
-	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" $filterValue ) }}
+	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "faqs" ) }}
 
 	{{ range $paginator.Pages }}
 	{{ .Render "card" }}
