@@ -24,7 +24,7 @@
             {{ range .Translations }}
             {{ $lang := (lower (default .Lang .Site.Language.LanguageName))}}
             <a class="footer__language__option" href="{{ .Permalink }}">{{ T $lang }}
-                <img src="{{ $.Site.BaseURL }}{{printf " /images/"}}{{ $lang }}{{printf " flag.png" }}"
+                <img src="{{ $.Site.BaseURL }}{{printf "/images/"}}{{ $lang }}{{printf " flag.png" }}"
                     title="{{ T $lang }} flag" class="footer__language__icon">
             </a>
             {{ end }}
