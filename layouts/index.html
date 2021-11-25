@@ -5,5 +5,5 @@
     <i class="fab fa-pagelines"></i>
 </div>
 {{ partial "sections.html" . }}
-{{ partial "testimonial.html" . }}
+{{ .Render "testimonials" }}
 {{ end }}
