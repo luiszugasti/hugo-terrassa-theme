@@ -1,0 +1,18 @@
+<section class="section">
+    {{ with .Site.GetPage "/testimonials" }}
+        <h1 class="section__title">
+            {{ .Title }}
+        </h1>
+        <p style="text-align: center;">
+            {{ .Content }}
+        </p>
+
+        <ul class="testimonial__list">
+            {{ $paginator := .Paginate (where .RegularPages "Type" "testimonials" ) }}
+
+            {{ range $paginator.Pages }}
+                {{ .Render "testimonial" }}
+            {{ end }}
+        </ul>
+    {{ end }}
+</section>
