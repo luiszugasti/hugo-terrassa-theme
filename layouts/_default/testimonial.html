@@ -1,0 +1,15 @@
+<li class="testimonial" style=" opacity:{{ .Page.Params.initialOpacity }}">
+    <header class="testimonial__header">
+        <h1 class="testimonial__header__title">
+            {{ .Content }}
+        </h1>
+    </header>
+
+    <main class="testimonial__body">
+        {{ .Title }}
+    </main>
+
+    <footer class="testimonial__footer">
+        {{ .Render "tags" }}
+    </footer>
+</li>
