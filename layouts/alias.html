@@ -10,7 +10,7 @@
         <meta http-equiv="refresh" content="0; url={{ .Permalink }}"/>
     </noscript>
     <script>
-      ;(function () {
+      (function () {
         // Only do i18n at root, 
         // otherwise, redirect immediately
         if (window.location.pathname !== '/') {
@@ -45,7 +45,7 @@
 
         var preferLang = getFirstBrowserLanguage()
         if (preferLang.indexOf('es') !== -1) {
-          // visitor prefers Chinese
+          // visitor prefers Spanish
           window.location.replace('/es/')
         } else {
           // fallback to English

@@ -564,13 +564,13 @@
 /* 404 */
 .notfound {
   align-items: center;
-  display: flex;
+  display: block;
   justify-content: center;
   min-height: 90vh;
 }
 
 .notfound__title {
-  font-size: var(--title);
+  font-size: var(--subtitle);
 }
 
 /* COPY */
