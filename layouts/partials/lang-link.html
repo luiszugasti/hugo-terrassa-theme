@@ -5,26 +5,26 @@
 {{ $aClass := (.Scratch.Get "aClass") }}
 
 {{ if $.Site.IsServer }}
-The language is: {{ $.Site.Language.LanguageName }}
-{{/* The range of translation: {{count .Translations}} */}}
+    The language is: {{ $.Site.Language.LanguageName }}
+    {{/* The range of translation: {{count .Translations}} */}}
 {{ end }}
 
 {{/* I think a better way of tackling this is to create some form of drop down where each language is a link, and if we
 find the current language, we exclude it! */}}
 {{ if $.Translations }}
-{{ range $.Translations }}
-{{ $lang := (lower (default .Lang .Site.Language.LanguageName))}}
-{{ if eq $.Site.Language.LanguageName "English" }}
-<li class="{{ $liClass }}" aria-label="{{ T $lang }}">
-    <a class="{{ $aClass }}" href="{{ .Permalink }}">{{ T $lang }}</a>
-</li>
-{{ end }}
-{{ if eq $.Site.Language.LanguageName "Espanol" }}
-<li class="{{ $liClass }}" aria-label="{{ T $lang }}">
-    <a class="{{ $aClass }}" href="{{ .Permalink }}">{{ T $lang }}</a>
-</li>
-{{ end }}
-{{ end }}
+    {{ range $.Translations }}
+        {{ $lang := (lower (default .Lang .Site.Language.LanguageName))}}
+        {{ if eq $.Site.Language.LanguageName "English" }}
+            <li class="{{ $liClass }}" aria-label="{{ T $lang }}">
+                <a class="{{ $aClass }}" href="{{ .Permalink }}">{{ T $lang }}</a>
+            </li>
+        {{ end }}
+        {{ if eq $.Site.Language.LanguageName "Espanol" }}
+            <li class="{{ $liClass }}" aria-label="{{ T $lang }}">
+                <a class="{{ $aClass }}" href="{{ .Permalink }}">{{ T $lang }}</a>
+            </li>
+        {{ end }}
+    {{ end }}
 {{ end }}
 
 {{/* We need a special case for questions/preguntas. .Translations returns the links to different translated links to
