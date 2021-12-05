@@ -1,7 +1,7 @@
 // setup
 const testimonials = document.getElementsByClassName("testimonial");
 let testimonialId = 0;
-const interval = window.setInterval(callback, 5000);
+const interval = window.setInterval(callback, 7500);
 
 // loop
 function callback() {
