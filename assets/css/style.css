@@ -253,6 +253,12 @@
 
 .testimonial__body {
   text-align: center;
+  font-weight: 600;
+}
+
+.testimonial__footer {
+  text-align: center;
+  font-style: italic;
 }
 
 .card__header__link {
