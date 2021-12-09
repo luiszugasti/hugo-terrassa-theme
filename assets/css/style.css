@@ -524,7 +524,7 @@
   align-items: center;
   display: flex;
   grid-area: contact;
-  justify-content: space-around;
+  justify-content: right;
   width: 100%;
 }
 
@@ -541,14 +541,16 @@
 .footer__contact__link,
 .footer__contact__link:hover {
   color: var(--white);
+  font-style: normal;
 }
 
 .footer__language {
   align-items: center;
   display: flex;
   grid-area: language;
-  justify-content: space-around;
+  justify-content: left;
   width: 100%;
+  padding-left: none;
 }
 
 .footer__language__option {
@@ -583,15 +585,16 @@
 .copy {
   align-items: center;
   display: flex;
-  font-size: 0.95rem;
+  font-size: 1rem;
   grid-area: copy;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 1.75rem;
   color: var(--white);
 }
 
 .copy > p {
   margin: 0;
+  text-align: center;
 }
 
 /* AUTHOR */
