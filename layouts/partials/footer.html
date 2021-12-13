@@ -35,8 +35,8 @@
         {{ if $.Site.Params.contact.email }}
         <p class="footer__contact__item">
             <a href="mailto:{{ $.Site.Params.contact.email}}" class="footer__contact__link" alt="Email">
-                {{ $.Site.Params.contact.email }}
-                <span><i class="far fa-envelope"></i></span>
+                <div class="footer__contact__item__email__link">{{ $.Site.Params.contact.email }}</div> 
+                <span><i class="far fa-envelope footer__contact__item__email__icon"></i></span>
             </a>
         </p>
         {{ end }}
