@@ -35,3 +35,9 @@
 
     [english]
     other = "English"
+
+    [title404]
+    other = "Pagina No Existe"
+
+    [description404]
+    other = "Volver a la página principal"

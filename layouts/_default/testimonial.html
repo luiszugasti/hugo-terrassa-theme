@@ -1,4 +1,4 @@
-<li class="testimonial" style=" opacity:{{ .Page.Params.initialOpacity }}">
+<li class="testimonial" style="opacity:{{ .Page.Params.initialOpacity }}">
     <header class="testimonial__header">
         <h1 class="testimonial__header__title">
             {{ .Content }}
@@ -6,10 +6,14 @@
     </header>
 
     <main class="testimonial__body">
-        {{ .Title }}
+        {{ .Params.author }}
     </main>
 
     <footer class="testimonial__footer">
-        {{ .Render "tags" }}
+        {{ if (and .Params.city .Params.country)}}
+            {{ .Params.city }}, {{ .Params.country }}
+        {{ else }}
+            {{ .Params.country }}
+        {{ end }}
     </footer>
 </li>

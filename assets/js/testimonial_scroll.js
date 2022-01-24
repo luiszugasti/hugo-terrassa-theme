@@ -1,12 +1,18 @@
+// constants
+const testimonialCount = 20;
+
 // setup
 const testimonials = document.getElementsByClassName("testimonial");
-let testimonialId = 0;
-const interval = window.setInterval(callback, 5000);
-
-// loop
-function callback() {
-  testimonials[testimonialId].style.opacity = 0;
-  testimonialId = (testimonialId + 1) % testimonials.length;
+if (testimonials.length > 0) {
+  let testimonialId = Math.floor(Math.random() * testimonialCount);
+  const interval = window.setInterval(testimonialCallback, 7500);
   testimonials[testimonialId].style.opacity = 1;
-  console.log(testimonialId);
+
+  // loop
+  function testimonialCallback() {
+    testimonials[testimonialId].style.opacity = 0;
+    testimonialId = (testimonialId + 1) % testimonials.length;
+    testimonials[testimonialId].style.opacity = 1;
+  }
 }
+
