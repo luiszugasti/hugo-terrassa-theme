@@ -21,9 +21,10 @@
 	}
 
 	.footer__contact {
-		align-items: start;
+		align-items: center;
 		flex-direction: column;
-		padding: 1.75rem 4.5rem;
+		padding: 1.75rem;
+		justify-content: right;
 	}
 
 	.footer__contact__item {
@@ -34,9 +35,16 @@
 		padding-bottom: 0;
 	}
 
+	.footer__contact__item__email__link {
+		display: none;
+	}
+
+	.footer__language {
+		justify-content: center;
+	}
+
 	.copy {
 		align-items: flex-end;
-		padding-right: 4.5rem;
 		text-align: center;
 	}
 }

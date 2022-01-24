@@ -36,3 +36,9 @@
 
     [english]
     other = "Inglés"
+
+    [title404]
+    other = "Page Not Found"
+
+    [description404]
+    other = "Go back home"

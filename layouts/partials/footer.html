@@ -34,9 +34,9 @@
     <address class="footer__contact">
         {{ if $.Site.Params.contact.email }}
         <p class="footer__contact__item">
-            <span><i class="far fa-envelope"></i></span>
             <a href="mailto:{{ $.Site.Params.contact.email}}" class="footer__contact__link" alt="Email">
-                {{ $.Site.Params.contact.email }}
+                <div class="footer__contact__item__email__link">{{ $.Site.Params.contact.email }}</div> 
+                <span><i class="far fa-envelope footer__contact__item__email__icon"></i></span>
             </a>
         </p>
         {{ end }}
@@ -68,8 +68,8 @@
     </address>
 
     <div class="copy">
-        {{ if .Param "copy.copy" }}
-        <p>{{ .Param "copy.copy" }}</p>
+        {{ if ( and (.Param "copy.copyTop") (.Param "copy.copyBottom")) }}
+        <p>{{ .Param "copy.copyTop" }} <br/> {{ .Param "copy.copyBottom" }}</p>
         {{ else }}
         <p>© {{ now.Format "2006" }} - {{ $.Site.Title }}</p>
         {{ end }}
