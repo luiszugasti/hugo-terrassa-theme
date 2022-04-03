@@ -1,19 +1,24 @@
-<li class="testimonial" style="opacity:{{ .Page.Params.initialOpacity }}">
+{{ $testimonialSlices := split .RawContent "HUPAT" }}
+
+{{ range $testimonialSlices }}
+{{ $text := printf "“%s”" . }}
+<li class="testimonial" style="opacity:{{ $.Page.Params.initialOpacity }}">
     <header class="testimonial__header">
         <h1 class="testimonial__header__title">
-            {{ .Content }}
+            {{ markdownify $text }}
         </h1>
     </header>
 
     <main class="testimonial__body">
-        {{ .Params.author }}
+        {{ $.Params.author }}
     </main>
 
     <footer class="testimonial__footer">
-        {{ if (and .Params.city .Params.country)}}
-            {{ .Params.city }}, {{ .Params.country }}
+        {{ if (and $.Params.city $.Params.country)}}
+            {{ $.Params.city }}, {{ $.Params.country }}
         {{ else }}
-            {{ .Params.country }}
+            {{ $.Params.country }}
         {{ end }}
     </footer>
 </li>
+{{ end }}
