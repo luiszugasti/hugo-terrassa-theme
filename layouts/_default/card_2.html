@@ -1,11 +1,11 @@
-{{ $testimonialSlices := split .RawContent "HUPAT" }}
+{{ $testimonialSlices := split .RawContent "HUPAT-. " }}
 
 {{ range $testimonialSlices }}
-{{ $text := printf "“%s”" . }}
+{{ $text := printf "“%s”" (trim . "\n") }}
 <li class="testimonial" style="opacity:{{ $.Page.Params.initialOpacity }}">
     <header class="testimonial__header">
         <h1 class="testimonial__header__title">
-            {{ markdownify $text }}
+            {{ markdownify (trim $text "\n") }}
         </h1>
     </header>
 
