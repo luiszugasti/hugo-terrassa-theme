@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main class="content">
+	{{ if ( eq .Page.Type "testimonials" ) }}
+		{{ $paginator := .Paginate (where .Data.Pages "Type" "testimonial" ) }}
+
+		{{ range $paginator.Pages.ByTitle }}
+		{{ .Render "card_3" }}
+		{{ end }}
+
+		{{ template "_internal/pagination.html" . }}
+	{{ end }}
+</main>
+{{ end }}

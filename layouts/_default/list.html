@@ -1,22 +1,7 @@
-{{/* List.html is rendered by default for a page with child entries,
-	Hence, I can take advantage of this and render my own lists dependent on the "slug"
-	of the parent page. For example, I am optionally rendering faqs or testimonials. */}}
-
 {{ define "main" }}
 <main class="content">
 	{{ if ( eq .Page.Type "faqs" ) }}
 		{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "faqs" ) }}
-
-		{{ range $paginator.Pages }}
-		{{ .Render "card" }}
-		{{ end }}
-
-		{{ template "_internal/pagination.html" . }}
-	{{ end }}
-
-	{{ if ( eq .Page.Type "testimonials" ) }}
-		{{ .Data.Pages }}
-		{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "testimonial" ) }}
 
 		{{ range $paginator.Pages }}
 		{{ .Render "card" }}

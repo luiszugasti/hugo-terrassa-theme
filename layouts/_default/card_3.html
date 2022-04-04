@@ -1,0 +1,29 @@
+<article class="card">
+    <header class="card__header">
+        <h1>
+            {{ .Params.author }}
+            <a href="#{{ anchorize .Params.author }}" class="card__header__link "  alt="{{ .Params.author }}." id="{{ anchorize .Params.author }}">
+                <i class="fab fa-pagelines"></i>
+            </a>
+        </h1>
+        <p class="card__header__date date">
+            {{ if (and .Params.country .Params.city) }}
+            <em>{{ .Params.city }}, {{ .Params.country }}.</em>
+            {{ else if ( .Params.country )}}
+            <em>{{ .Params.country }}.</em>
+            {{ else if ( .Params.city )}}
+            <em>{{ .Params.city }}.</em>
+            {{ end }}
+        </p>
+    </header>
+
+    {{ $textNoHupat := replace .Content "HUPAT-. " " "}}
+
+    <main class="card__body">
+        {{ markdownify $textNoHupat }}
+    </main>
+
+    <footer class="card__footer">
+        {{ .Render "tags" }}
+    </footer>
+</article>
