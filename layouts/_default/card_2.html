@@ -14,11 +14,16 @@
     </main>
 
     <footer class="testimonial__footer">
+        From 
         {{ if (and $.Params.city $.Params.country)}}
             {{ $.Params.city }}, {{ $.Params.country }}
         {{ else }}
             {{ $.Params.country }}
         {{ end }}
+         - 
+        <a href="testimonials/#{{ anchorize $.Params.author }}" class="card__header__link ">
+            <em>See full testimonial</em>
+        </a>
     </footer>
 </li>
 {{ end }}
