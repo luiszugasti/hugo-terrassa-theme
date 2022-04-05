@@ -2,7 +2,7 @@
     <!-- Entries list. -->
     <ul class="menu__items" aria-label="menu">
         {{ $current := . }}
-        {{ range .Site.Menus.main }}
+        {{ range .Site.Menus.main.ByWeight }}
             <li class="menu__items__item" aria-label="{{ .Name }}">
                 <a href="{{ .URL }}" class="menu__items__item__link {{ if $current.IsMenuCurrent "main" . }}active{{ end }}"
                     alt="{{ .Name }}" role="menuitem">

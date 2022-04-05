@@ -14,7 +14,7 @@
     </main>
 
     <footer class="testimonial__footer">
-        From 
+        {{T "from" }} 
         {{ if (and $.Params.city $.Params.country)}}
             {{ $.Params.city }}, {{ $.Params.country }}
         {{ else }}
@@ -22,7 +22,7 @@
         {{ end }}
          - 
         <a href="testimonials/#{{ anchorize $.Params.author }}" class="card__header__link ">
-            <em>See full testimonial</em>
+            <em>{{T "ctaFullTestimonial" }}</em>
         </a>
     </footer>
 </li>

@@ -42,3 +42,9 @@
 
     [description404]
     other = "Go back home"
+
+    [from]
+    other = "From"
+
+    [ctaFullTestimonial]
+    other = "See full testimonial"
