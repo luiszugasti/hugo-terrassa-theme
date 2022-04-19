@@ -4,10 +4,12 @@
 {{ $liClass := (.Scratch.Get "liClass") }}
 {{ $aClass := (.Scratch.Get "aClass") }}
 
+{{/*
 {{ if $.Site.IsServer }}
     The language is: {{ $.Site.Language.LanguageName }}
-    {{/* The range of translation: {{count .Translations}} */}}
+    {{/* The range of translation: {{count .Translations}}
 {{ end }}
+*/}}
 
 {{/* I think a better way of tackling this is to create some form of drop down where each language is a link, and if we
 find the current language, we exclude it! */}}
