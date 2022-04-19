@@ -1,18 +1,22 @@
-// constants
-const testimonialCount = 20;
+function testimonialLoop() {
+  // setup
+  const testimonials = document.getElementsByClassName("testimonial");
 
-// setup
-const testimonials = document.getElementsByClassName("testimonial");
-if (testimonials.length > 0) {
-  let testimonialId = Math.floor(Math.random() * testimonialCount);
-  const interval = window.setInterval(testimonialCallback, 7500);
-  testimonials[testimonialId].style.opacity = 1;
+  if (testimonials.length ===0) { return; }
+
+  let currentTestimonial = Math.floor(Math.random() * testimonials.length);
+  testimonials[currentTestimonial].style.opacity = 1;
+  testimonials[currentTestimonial].style.zIndex = 90;
+  const callBackFunction = window.setInterval(testimonialCallback, 6500);
 
   // loop
   function testimonialCallback() {
-    testimonials[testimonialId].style.opacity = 0;
-    testimonialId = (testimonialId + 1) % testimonials.length;
-    testimonials[testimonialId].style.opacity = 1;
+    testimonials[currentTestimonial].style.opacity = 0;
+    testimonials[currentTestimonial].style.zIndex = 0;
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    testimonials[currentTestimonial].style.opacity = 1;
+    testimonials[currentTestimonial].style.zIndex = 90;
   }
 }
 
+testimonialLoop();

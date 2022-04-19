@@ -24,8 +24,8 @@
 }
 
 .header__title__logo {
-  max-width: 7rem;
-  min-width: 5rem;
+  max-width: 15rem;
+  min-width: 10rem;
   vertical-align: middle;
   width: 100%;
 }
@@ -263,12 +263,20 @@
   font-style: italic;
 }
 
+.testimonial__header h1 {
+  font-size: 1em;
+}
+
 .card__header__link {
   color: var(--primary-text);
 }
 
 .card__header__link:hover {
   color: var(--primary);
+}
+
+.card__header__link:target {
+  color: var(--primary-dark);
 }
 
 .card__header__author {

@@ -41,3 +41,9 @@
 
     [description404]
     other = "Volver a la página principal"
+
+    [from]
+    other = "Desde"
+
+    [ctaFullTestimonial]
+    other = "Ver testimonio completo"

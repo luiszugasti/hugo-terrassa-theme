@@ -1,11 +1,13 @@
 {{ define "main" }}
 <main class="content">
-	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "faqs" ) }}
+	{{ if ( eq .Page.Type "faqs" ) }}
+		{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "faqs" ) }}
 
-	{{ range $paginator.Pages }}
-	{{ .Render "card" }}
+		{{ range $paginator.Pages }}
+		{{ .Render "card" }}
+		{{ end }}
+
+		{{ template "_internal/pagination.html" . }}
 	{{ end }}
-
-	{{ template "_internal/pagination.html" . }}
 </main>
 {{ end }}

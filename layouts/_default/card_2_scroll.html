@@ -8,10 +8,10 @@
         </p>
 
         <ul class="testimonial__list">
-            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "testimonials" ) }}
+            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "testimonial" ) }}
 
             {{ range $paginator.Pages }}
-                {{ .Render "testimonial" }}
+                {{ .Render "card_2" }}
             {{ end }}
         </ul>
     {{ end }}

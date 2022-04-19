@@ -1,0 +1,29 @@
+{{ $testimonialSlices := split .RawContent "HUPAT-. " }}
+
+{{ range $testimonialSlices }}
+{{ $text := printf "“%s”" (trim . "\n") }}
+<li class="testimonial" style="opacity:{{ $.Page.Params.initialOpacity }}">
+    <header class="testimonial__header">
+        <h1 class="testimonial__header__title">
+            {{ markdownify (trim $text "\n") }}
+        </h1>
+    </header>
+
+    <main class="testimonial__body">
+        {{ $.Params.author }}
+    </main>
+
+    <footer class="testimonial__footer">
+        {{T "from" }} 
+        {{ if (and $.Params.city $.Params.country)}}
+            {{ $.Params.city }}, {{ $.Params.country }}
+        {{ else }}
+            {{ $.Params.country }}
+        {{ end }}
+         - 
+        <a href="testimonials/#{{ anchorize $.Params.author }}" class="card__header__link ">
+            <em>{{T "ctaFullTestimonial" }}</em>
+        </a>
+    </footer>
+</li>
+{{ end }}
