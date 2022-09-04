@@ -1,11 +1,19 @@
-<li class="menu__items__dropdown_item menu__items__item" aria-label="Literally a name">
-    <a class="menu__items__item__link"
+<li class="menu__items__item onhoverlink" aria-label="Home" style="
+    flex-basis: 100%;
+">
+    <a class="onhoverlink"
         alt="" role="menuitem">
-        hover over me
+        On Hover link
     </a>
-    <div class="pepe">
-        <p>
-            Pepe is here
-        </p>
-    </div>
+    <ul class="menu__items menu_hover_drop" aria-label="menu">
+        {{ $current := . }}
+        {{ range .Site.Menus.about.ByWeight }}
+        <li class="menu__items__item" aria-label="{{ .Name }}">
+            <a href="{{ .URL }}" class="menu__items__item__link {{ if $current.IsMenuCurrent " about" . }}active{{ end
+                }}" alt="{{ .Name }}" role="menuitem">
+                {{ .Name }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
 </li>

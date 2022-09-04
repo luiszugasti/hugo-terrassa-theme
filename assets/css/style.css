@@ -85,12 +85,14 @@
   width: 100%;
 }
 
-.pepe {
-  position: relative;
+.menu_hover_drop {
+  display: none;
   top:20px;
 }
 
-.menu__items__dropdown_item:hover .pepe {background-color: #000;}
+.onhoverlink:hover .menu_hover_drop {
+  display: block;
+}
 
 /* #endregion */
 
