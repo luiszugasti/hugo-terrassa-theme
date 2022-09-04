@@ -1,6 +1,6 @@
 /* #region HEADER */
 .header {
-  background-color: var(--white);
+  background-color: var(--black);
   box-shadow: 0 1px 5px var(--divider);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -84,6 +84,14 @@
   opacity: 1;
   width: 100%;
 }
+
+.pepe {
+  position: relative;
+  top:20px;
+}
+
+.menu__items__dropdown_item:hover .pepe {background-color: #000;}
+
 /* #endregion */
 
 /* #region HAMBURGER MENU */
