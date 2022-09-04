@@ -469,7 +469,7 @@
   font-size: 1rem;
 }
 
-/* FOOTER */
+/* #region FOOTER */
 .footer {
   background-color: var(--primary-dark);
   display: grid;
@@ -582,6 +582,7 @@
   display: inline;
   width: 1em;
 }
+/* #endregion */
 
 /* 404 */
 .notfound {
@@ -685,3 +686,31 @@ main > p > img {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* #region ABOUT ME */
+
+.about_me{
+  max-width: 900px;
+  margin: 0 1.75rem 0;
+}
+
+.about_me__body {
+  display: grid;
+  grid-template-columns: auto 1fr 150px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "content . image";
+  column-gap: 20px;
+  justify-content: center;
+  margin: 1.75rem 14% 0.75rem;
+}
+
+.about_me__image {
+  grid-area: image;
+  max-width: 400px;
+}
+
+.about_me__article {
+  grid-area: content;
+}
+/* #endregion */

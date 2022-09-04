@@ -1,42 +1,41 @@
-<div>
-    <h1>
+<div class="post">
+    <h1 class="post__header">
         {{ .Title }}
     </h1>
-    <h2>
+    <h2 class="post__subtitle">
         {{ .Description }}
     </h2>
-    <article id="content">
-        {{ $contentBundle := .Site.GetPage "/about_me/about_me"}}
-
-        <p>
-            {{ with $contentBundle.GetPage "intro.md" }}
+    <article class="about_me__body">
+        <div class="about_me__article">
+            {{ $contentBundle := .Site.GetPage "/about_me/about_me"}}
+            <p>
+                {{ with $contentBundle.GetPage "intro.md" }}
                 {{ .Content }}
-            {{ end }}
-        </p>
-        <p>
-            {{ with $contentBundle.GetPage "p1.md" }}
+                {{ end }}
+            </p>
+            <p>
+                {{ with $contentBundle.GetPage "p1.md" }}
                 {{ .Content }}
-            {{ end }}
-        </p>
-        <p>
-            {{ with $contentBundle.GetPage "p2.md" }}
+                {{ end }}
+            </p>
+            <p>
+                {{ with $contentBundle.GetPage "p2.md" }}
                 {{ .Content }}
-            {{ end }}
-        </p>
-
+                {{ end }}
+            </p>
+            <p>
+                {{ with $contentBundle.GetPage "p3.md" }}
+                {{ .Content }}
+                {{ end }}
+            </p>
+            <p>
+                {{ with $contentBundle.GetPage "conclusion.md" }}
+                {{ .Content }}
+                {{ end }}
+            </p>
+        </div>
         {{ with $contentBundle.Resources.GetMatch "marilu.jpg"}}
-            <img src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
+        <img class="about_me__image" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
         {{ end }}
-
-        <p>
-            {{ with $contentBundle.GetPage "p3.md" }}
-                {{ .Content }}
-            {{ end }}
-        </p>
-        <p>
-            {{ with $contentBundle.GetPage "conclusion.md" }}
-                {{ .Content }}
-            {{ end }}
-        </p>
     </article>
 </div>
