@@ -1,41 +1,51 @@
 <div class="about_me">
     <article class="about_me__body">
-        <div class="about_me__article">
-            <h1 class="about_me__title">
-                {{ .Description }}
-            </h1>
-            {{ $contentBundle := .Site.GetPage "/about_me/about_me"}}
-            <p>
-                {{ with $contentBundle.GetPage "intro.md" }}
-                {{ .Content }}
-                {{ end }}
-            </p>
-            <p>
-                {{ with $contentBundle.GetPage "p1.md" }}
-                {{ .Content }}
-                {{ end }}
-            </p>
-            <p>
-                {{ with $contentBundle.GetPage "p2.md" }}
-                {{ .Content }}
-                {{ end }}
-            </p>
-            <p>
-                {{ with $contentBundle.GetPage "p3.md" }}
-                {{ .Content }}
-                {{ end }}
-            </p>
-            <p>
-                {{ with $contentBundle.GetPage "conclusion.md" }}
-                {{ .Content }}
-                {{ end }}
-            </p>
+        <h1 class="about_me__title">
+            {{ .Description }}
+        </h1>
+        {{ $contentBundle := .Site.GetPage "/about_me/about_me"}}
+
+        {{ with $contentBundle.GetPage "intro.md" }}
+        <div class="about_me__p1 about_me__p">
+            {{ .Content }}
         </div>
+        {{ end }}
+
+        {{ with $contentBundle.GetPage "p1.md" }}
+        <div class="about_me__p2 about_me__p">
+            {{ .Content }}
+        </div>
+        {{ end }}
+
+        {{ with $contentBundle.GetPage "p2.md" }}
+        <div class="about_me__p3 about_me__p">
+            
+            {{ .Content }}
+            
+        </div>
+        {{ end }}
+
+        {{ with $contentBundle.GetPage "p3.md" }}
+        <div class="about_me__p4 about_me__p">
+            
+            {{ .Content }}
+            
+        </div>
+        {{ end }}
+
+        {{ with $contentBundle.GetPage "conclusion.md" }}
+        <div  class="about_me__p5 about_me__p">
+            
+            {{ .Content }}
+            
+        </div>
+        {{ end }}
+
         {{ with $contentBundle.Resources.GetMatch "marilu.jpg"}}
-        <img class="about_me__image" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
+        <img class="about_me__img1 about_me__img" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
         {{ end }}
         {{ with $contentBundle.Resources.GetMatch "marilu.jpg"}}
-        <img class="about_me__image_2" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
+        <img class="about_me__img2 about_me__img" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
         {{ end }}
     </article>
 </div>
