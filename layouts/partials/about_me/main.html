@@ -1,0 +1,41 @@
+<div class="about_me">
+    <article class="about_me__body">
+        <div class="about_me__article">
+            <h1 class="about_me__title">
+                {{ .Description }}
+            </h1>
+            {{ $contentBundle := .Site.GetPage "/about_me/about_me"}}
+            <p>
+                {{ with $contentBundle.GetPage "intro.md" }}
+                {{ .Content }}
+                {{ end }}
+            </p>
+            <p>
+                {{ with $contentBundle.GetPage "p1.md" }}
+                {{ .Content }}
+                {{ end }}
+            </p>
+            <p>
+                {{ with $contentBundle.GetPage "p2.md" }}
+                {{ .Content }}
+                {{ end }}
+            </p>
+            <p>
+                {{ with $contentBundle.GetPage "p3.md" }}
+                {{ .Content }}
+                {{ end }}
+            </p>
+            <p>
+                {{ with $contentBundle.GetPage "conclusion.md" }}
+                {{ .Content }}
+                {{ end }}
+            </p>
+        </div>
+        {{ with $contentBundle.Resources.GetMatch "marilu.jpg"}}
+        <img class="about_me__image" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
+        {{ end }}
+        {{ with $contentBundle.Resources.GetMatch "marilu.jpg"}}
+        <img class="about_me__image_2" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
+        {{ end }}
+    </article>
+</div>

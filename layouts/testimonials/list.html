@@ -4,7 +4,7 @@
 		{{ $paginator := .Paginate (where .Data.Pages "Type" "testimonial" ) }}
 
 		{{ range $paginator.Pages.ByTitle }}
-		{{ .Render "card_3" }}
+		{{ partial "testimonials/testimonial.html" . }}
 		{{ end }}
 
 		{{ template "_internal/pagination.html" . }}
