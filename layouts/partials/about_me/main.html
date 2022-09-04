@@ -1,12 +1,10 @@
-<div class="post">
-    <h1 class="post__header">
-        {{ .Title }}
-    </h1>
-    <h2 class="post__subtitle">
-        {{ .Description }}
-    </h2>
+<div class="about_me">
+
     <article class="about_me__body">
         <div class="about_me__article">
+            <h1 class="about_me__title">
+                {{ .Description }}
+            </h1>
             {{ $contentBundle := .Site.GetPage "/about_me/about_me"}}
             <p>
                 {{ with $contentBundle.GetPage "intro.md" }}
@@ -36,6 +34,9 @@
         </div>
         {{ with $contentBundle.Resources.GetMatch "marilu.jpg"}}
         <img class="about_me__image" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
+        {{ end }}
+        {{ with $contentBundle.Resources.GetMatch "marilu.jpg"}}
+        <img class="about_me__image_2" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
         {{ end }}
     </article>
 </div>

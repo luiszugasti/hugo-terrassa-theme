@@ -694,23 +694,45 @@ main > p > img {
   margin: 0 1.75rem 0;
 }
 
+.about_me__title {
+  font-size: var(--header);
+}
+
 .about_me__body {
   display: grid;
-  grid-template-columns: auto 1fr 150px;
-  grid-template-rows: auto;
+  grid-template-columns: 1fr 30px 1fr;
+  grid-template-rows: auto auto;
   grid-template-areas: 
-    "content . image";
+    "content content image";
   column-gap: 20px;
-  justify-content: center;
+  align-items: center;
   margin: 1.75rem 14% 0.75rem;
+  width: 100%;
+  row-gap:30px;
 }
 
 .about_me__image {
   grid-area: image;
   max-width: 400px;
+  display:block;
+  animation: focus 0.95s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.about_me__image_2 {
+  grid-area: image;
+  max-width: 400px;
+  display:block;
+  animation: focus 0.95s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  grid-column-start: 3;
+  grid-row-start: 2;
 }
 
 .about_me__article {
   grid-area: content;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  align-self:start;
 }
 /* #endregion */
