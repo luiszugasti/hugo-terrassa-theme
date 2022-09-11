@@ -181,6 +181,10 @@
 	.pagination {
 		width: 70%;
 	}
+
+	.hamburger__items {
+		width: 100vw;
+	}
 }
 
 @media only screen and (max-width: 576px) {
