@@ -14,7 +14,14 @@
                 </a>
             </li>
             {{ end }}
-            {{ partial "dropdown-hamburger-menu.html" . }}
+            {{ range .Site.Menus.about.ByWeight }}
+            <li class="hamburger__items__item" aria-label="{{ .Name }}">
+                <a href="{{ .URL }}" class="hamburger__items__item__link" alt="{{ .Name }}" role="menuitem">
+                    {{ .Name }}
+                </a>
+            </li>
+            {{ end }}
+            {{/*  {{ partial "dropdown-hamburger-menu.html" . }}  */}}
             {{ .Scratch.Set "liClass" "hamburger__items__item" }}
             {{ .Scratch.Set "aClass" "hamburger__items__item__link" }}
             {{ partial "lang-link.html" . }}
