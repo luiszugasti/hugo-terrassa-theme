@@ -23,6 +23,9 @@
 
   /* Radii */
   --radius: 0.2rem;
+
+  /* Measurements */
+  --highlight: 3px;
 }
 
 a {

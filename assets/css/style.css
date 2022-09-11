@@ -61,11 +61,12 @@
 }
 
 .menu__items__item__link::before,
-.hamburger__toggle__icon::before {
+.hamburger__toggle__icon::before,
+.hamburger__items__toggle__item::before {
   bottom: 0;
   content: "";
   display: block;
-  height: 3px;
+  height: var(--highlight);
   position: absolute;
   transition: all 0.25s ease-in-out;
   width: 0%;
@@ -82,7 +83,8 @@
   width: 100%;
 }
 
-.menu__items__item__link.active::before {
+.menu__items__item__link.active::before,
+.hamburger__items__toggle__item:checked::before {
   opacity: 1;
   width: 100%;
 }
@@ -122,7 +124,8 @@
 }
 
 .toggle,
-.hamburger__toggle {
+.hamburger__toggle,
+.hamburger__dropdown__toggle {
   user-select: none;
 }
 
@@ -132,7 +135,8 @@
   right: 4.5rem;
 }
 
-.hamburger__toggle {
+.hamburger__toggle,
+.hamburger__dropdown__toggle {
   height: 32px;
   left: -5px;
   opacity: 0;
@@ -152,7 +156,7 @@
   visibility: hidden;
   width: 50vw;
   max-height:80vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .hamburger__items__item {
@@ -175,6 +179,18 @@
 .toggle .hamburger__toggle:checked ~ .hamburger__toggle__icon:before {
   opacity: 1;
   width: 100%;
+}
+
+.hamburger_hover_drop {
+  display: none;
+}
+
+.hamburger__dropdown__toggle:checked ~ .hamburger_hover_drop {
+  display: block;
+}
+
+.hamburger_hover_drop {
+  transition: opacity 200ms ease-in-out;
 }
 
 /* #endregion */

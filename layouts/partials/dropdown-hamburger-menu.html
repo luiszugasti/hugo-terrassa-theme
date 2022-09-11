@@ -1,0 +1,29 @@
+{{ .Scratch.Set "currentMenuHighlight" "" }}
+
+{{ $current := . }}
+{{ range .Site.Menus.about.ByWeight }}
+    {{ if $current.IsMenuCurrent "about" . }} 
+        {{ $current.Scratch.Set "currentMenuHighlight" "active" }}
+    {{ end }}
+{{ end }}
+
+
+<li class="hamburger__items__item onhoverlink" aria-label="{{T "aboutMeDropdown"}}">
+    <input type="checkbox" class="hamburger__dropdown__toggle" id="hamburgerDropdownToggle" name="hamburger toggle"
+            aria-label="Hamburger menu">
+    <label class="hamburger__items__toggle__item {{ $current.Scratch.Get "currentMenuHighlight"}}"
+        alt="" role="menuitem" for="hamburgerDropdownToggle">
+        {{T "aboutMeDropdown"}}
+    </label>
+    <ul class="hamburger_hover_drop" aria-label="menu">
+        {{ $current := . }}
+        {{ range .Site.Menus.about.ByWeight }}
+        <li class="hamburger__items__item" aria-label="{{ .Name }}">
+            <a href="{{ .URL }}" class="hamburger__items__item__link {{ if $current.IsMenuCurrent "about" . }}active{{ end
+                }}" alt="{{ .Name }}" role="menuitem">
+                {{ .Name }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</li>

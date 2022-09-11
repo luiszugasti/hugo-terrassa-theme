@@ -1,7 +1,7 @@
 <nav class="hamburger-menu" aria-label="mobile-menu">
     <div class="toggle">
         <input type="checkbox" class="hamburger__toggle" id="hamburgerToggle" name="hamburger toggle"
-            aria-label="Hamburguer menu">
+            aria-label="Hamburger menu">
         <label class="hamburger__toggle__icon" for="hamburgerToggle">
             {{ $.Site.Params.menuText }}
         </label>
@@ -14,6 +14,7 @@
                 </a>
             </li>
             {{ end }}
+            {{ partial "dropdown-hamburger-menu.html" . }}
             {{ .Scratch.Set "liClass" "hamburger__items__item" }}
             {{ .Scratch.Set "aClass" "hamburger__items__item__link" }}
             {{ partial "lang-link.html" . }}
