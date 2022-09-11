@@ -151,6 +151,8 @@
   transition: transform 0.15s ease-in-out;
   visibility: hidden;
   width: 50vw;
+  max-height:80vh;
+  overflow-y: scroll;
 }
 
 .hamburger__items__item {
