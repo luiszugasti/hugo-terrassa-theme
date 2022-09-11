@@ -10,9 +10,10 @@
                 </a>
             </li>
         {{ end }}
+        {{ partial "dropdown-menu.html" . }}
         {{ .Scratch.Set "liClass" "menu__items__item" }}
         {{ .Scratch.Set "aClass" "menu__items__item__link" }}
         {{ partial "lang-link.html" . }}
-        {{ partial "dropdown-menu.html" . }}
+
     </ul>
 </nav>

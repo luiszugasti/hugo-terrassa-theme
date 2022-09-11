@@ -86,12 +86,29 @@
 }
 
 .menu_hover_drop {
-  display: none;
-  top:20px;
+  position: absolute;
+  top: 1.9rem;
+  left: -1rem;
+  box-shadow: 0 0 10px var(--divider);
+  background-color: var(--white);
+  border-radius: var(--radius);
+  width: 12rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out;
+}
+
+.onhoverlink {
+  position:relative;
 }
 
 .onhoverlink:hover .menu_hover_drop {
-  display: block;
+  visibility: visible;
+  opacity:1;
 }
 
 /* #endregion */
