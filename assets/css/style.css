@@ -89,7 +89,7 @@
   position: absolute;
   top: 1.9rem;
   left: -1rem;
-  box-shadow: 0 0 10px var(--divider);
+  box-shadow: 0 1px 5px var(--divider);
   background-color: var(--white);
   border-radius: var(--radius);
   width: 12rem;
@@ -141,8 +141,8 @@
 
 .hamburger__items {
   background-color: var(--white);
-  box-shadow: -1px 2px 5px var(--divider);
-  height: 100vh;
+  box-shadow: 0 1px 5px var(--divider);
+  padding-bottom: 1.75rem;
   position: absolute;
   transform: translate(100%, 0);
   transform-origin: 0% 0%;
@@ -224,6 +224,7 @@
 
 /* #region SEPARATOR */
 .separator {
+  padding: 1rem;
   align-items: center;
   display: flex;
   font-size: 1.35rem;
