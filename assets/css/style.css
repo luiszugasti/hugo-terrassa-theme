@@ -60,7 +60,8 @@
   color: var(--primary-text);
 }
 
-.menu__items__item__link::before {
+.menu__items__item__link::before,
+.hamburger__toggle__icon::before {
   bottom: 0;
   content: "";
   display: block;
@@ -70,7 +71,8 @@
   width: 0%;
 }
 
-.menu__items__item__link::before {
+.menu__items__item__link::before,
+.hamburger__toggle__icon::before {
   background-color: var(--primary);
 }
 
@@ -167,6 +169,12 @@
   transform: translate(-70%, 0);
   visibility: visible;
 }
+
+.toggle .hamburger__toggle:checked ~ .hamburger__toggle__icon:before {
+  opacity: 1;
+  width: 100%;
+}
+
 /* #endregion */
 
 /* #region HERO */
