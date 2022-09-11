@@ -1,13 +1,23 @@
+{{ .Scratch.Set "currentMenuHighlight" "" }}
+
+{{ $current := . }}
+{{ range .Site.Menus.about.ByWeight }}
+    {{ if $current.IsMenuCurrent "about" . }} 
+        {{ $current.Scratch.Set "currentMenuHighlight" "active" }}
+    {{ end }}
+{{ end }}
+
+
 <li class="menu__items__item onhoverlink" aria-label="Home">
-    <a class="menu__items__item__link onhoverlink"
+    <a class="menu__items__item__link onhoverlink {{ $current.Scratch.Get "currentMenuHighlight"}}"
         alt="" role="menuitem">
-        On Hover link
+        {{T "aboutMeDropdown"}}
     </a>
     <ul class="menu__items menu_hover_drop" aria-label="menu">
         {{ $current := . }}
         {{ range .Site.Menus.about.ByWeight }}
         <li class="menu__items__item" aria-label="{{ .Name }}">
-            <a href="{{ .URL }}" class="menu__items__item__link {{ if $current.IsMenuCurrent " about" . }}active{{ end
+            <a href="{{ .URL }}" class="menu__items__item__link {{ if $current.IsMenuCurrent "about" . }}active{{ end
                 }}" alt="{{ .Name }}" role="menuitem">
                 {{ .Name }}
             </a>

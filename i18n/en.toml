@@ -48,3 +48,6 @@
 
     [ctaFullTestimonial]
     other = "See full testimonial"
+
+    [aboutMeDropdown]
+    other = "About"

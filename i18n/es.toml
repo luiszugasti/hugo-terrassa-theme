@@ -47,3 +47,6 @@
 
     [ctaFullTestimonial]
     other = "Ver testimonio completo"
+
+    [aboutMeDropdown]
+    other = "Sobre"
