@@ -13,7 +13,8 @@
             aria-label="Hamburger menu">
     <label class="hamburger__items__toggle__item {{ $current.Scratch.Get "currentMenuHighlight"}}"
         alt="" role="menuitem" for="hamburgerDropdownToggle">
-        {{T "aboutMeDropdown"}}
+        {{T "aboutMeDropdown"}} <i class="fas fa-angle-down"></i>
+
     </label>
     <ul class="hamburger_hover_drop" aria-label="menu">
         {{ $current := . }}
