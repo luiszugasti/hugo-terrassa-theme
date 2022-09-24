@@ -1,9 +1,6 @@
     [langCode]
     other="en"
 
-    [whenAreTherapyGiven]
-    other="Therapies can be scheduled between Monday and Friday, from 8am to 4pm."
-
     [inputNameLabel]
     other="Your name."
 
