@@ -41,10 +41,13 @@
         </div>
         {{ end }}
 
-        {{ with $contentBundle.Resources.GetMatch "marilu.jpg"}}
+        {{ with $contentBundle.Resources.GetMatch "IMG_5170.jpg"}}
         <img class="about_me__img1 about_me__img" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
         {{ end }}
-        {{ with $contentBundle.Resources.GetMatch "marilu.jpg"}}
+        {{ with $contentBundle.Resources.GetMatch "IMG_5363.jpg"}}
+        <img class="about_me__img2 about_me__img" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
+        {{ end }}
+        {{ with $contentBundle.Resources.GetMatch "IMG_5198.jpg"}}
         <img class="about_me__img2 about_me__img" src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
         {{ end }}
     </article>
