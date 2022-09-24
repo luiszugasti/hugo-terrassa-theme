@@ -1,5 +1,11 @@
 {{ define "main" }}
 <main class="content">
+
+	<h1 class="contact__title">{{ .Title }}</h1>
+    <p class="contact__content">{{ .Description }}</p>
+
+	{{ .Content }}
+
 	{{ if ( eq .Page.Type "testimonials" ) }}
 		{{ $paginator := .Paginate (where .Data.Pages "Type" "testimonial" ) }}
 

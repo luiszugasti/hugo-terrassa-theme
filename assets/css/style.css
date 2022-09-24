@@ -736,7 +736,7 @@
   transition: 0s;
 }
 
-main > p > img {
+main > p > img, section > div > p > img {
   display: block;
   margin-left: auto;
   margin-right: auto;

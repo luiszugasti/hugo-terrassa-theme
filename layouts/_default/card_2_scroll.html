@@ -3,10 +3,6 @@
         <h1 class="section__title">
             {{ .Title }}
         </h1>
-        <p style="text-align: center;">
-            {{ .Content }}
-        </p>
-
         <ul class="testimonial__list">
             {{ $paginator := .Paginate (where .Site.RegularPages "Type" "testimonial" ) }}
 
