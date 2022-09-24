@@ -11,7 +11,7 @@ themesDir = "../.." # Not necessary on production sites
 
 [params]
     description = "Terrassa is a simple, fast and responsive theme for Hugo with a strong focus on accessibility made from scratch."
-    favicon = "favicon.ico"
+    favicon = "site/favicon.ico"
     logo = ""
 
 [params.hero]
