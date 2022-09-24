@@ -243,11 +243,6 @@
 		margin-right: 5%;
 		padding: 0;
 	}
-
-	/* TODO: Fix weird testimonial overlap bug in small widths
-	.testimonial {
-	}
-	*/
 }
 
 @media only screen and (max-width: 340px) {
