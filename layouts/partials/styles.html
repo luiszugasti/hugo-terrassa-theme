@@ -4,7 +4,8 @@
 {{ $media := resources.Get "css/media-queries.css" }}
 {{ $animations := resources.Get "css/animations.css" }}
 {{ $custom := resources.Get "css/custom.css" }}
-{{ $bundle := slice $reset $base $style $media $animations $custom | resources.Concat "css/bundle.css" }}
+{{ $shortcodes := resources.Get "css/shortcodes.css" }}
+{{ $bundle := slice $reset $base $style $media $animations $custom $shortcodes | resources.Concat "css/bundle.css" }}
 
 {{ $css := $bundle | resources.Minify }}
 

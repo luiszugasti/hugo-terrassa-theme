@@ -12,6 +12,51 @@
 	.hamburger__items__item {
 		margin-right: 1.75rem;
 	}
+
+	.about_me__body {
+		grid-template-columns: 1fr;
+		margin: 1.75rem 0% 0.75rem;
+	}
+
+	.about_me__title {
+		grid-row-start:1
+	}
+
+	.about_me__img1 {
+		grid-row-start:2;
+	}
+	
+	.about_me__img2 {
+		grid-row-start:5
+	}
+	
+	.about_me__img {
+		grid-column-start: 1;
+	}
+	
+	.about_me__p {
+		grid-column-start: 1;
+	}
+	
+	.about_me__p1 {
+		grid-row-start:3;
+	}
+	
+	.about_me__p2 {
+		grid-row-start:4;
+	}
+	
+	.about_me__p3 {
+		grid-row-start:6;
+	}
+	
+	.about_me__p4 {
+		grid-row-start:7;
+	}
+	
+	.about_me__p5 {
+		grid-row-start:8;
+	}
 }
 
 @media only screen and (max-width: 1024px) {
@@ -136,6 +181,10 @@
 	.pagination {
 		width: 70%;
 	}
+
+	.hamburger__items {
+		width: 70vw;
+	}
 }
 
 @media only screen and (max-width: 576px) {
@@ -194,11 +243,6 @@
 		margin-right: 5%;
 		padding: 0;
 	}
-
-	/* TODO: Fix weird testimonial overlap bug in small widths
-	.testimonial {
-	}
-	*/
 }
 
 @media only screen and (max-width: 340px) {

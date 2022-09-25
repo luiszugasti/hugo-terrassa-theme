@@ -1,0 +1,7 @@
+{{ define "main" }}
+<main class="content">
+	{{ if ( eq .Page.Type "about_me" ) }}
+        {{ partial "about_me/main.html" . }}
+	{{ end }}
+</main>
+{{ end }}

@@ -1,7 +1,5 @@
     [langCode]
     other="es"
-    [whenAreTherapyGiven]
-    other="Las terapias se dan de lunes a viernes entre 8am y 4pm."
 
     [inputNameLabel]
     other="Tu nombre."
@@ -47,3 +45,9 @@
 
     [ctaFullTestimonial]
     other = "Ver testimonio completo"
+
+    [aboutMeDropdown]
+    other = "Sobre"
+
+    [ladyOnBeach]
+    other = "Marilu caminando cerca del mar"

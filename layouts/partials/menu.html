@@ -1,6 +1,6 @@
 <nav class="menu" aria-label="menu">
     <!-- Entries list. -->
-    <ul class="menu__items" aria-label="menu">
+    <ul class="menu__items" aria-label="menu" style="flex-wrap:wrap">
         {{ $current := . }}
         {{ range .Site.Menus.main.ByWeight }}
             <li class="menu__items__item" aria-label="{{ .Name }}">
@@ -10,9 +10,10 @@
                 </a>
             </li>
         {{ end }}
-        
+        {{ partial "dropdown-menu.html" . }}
         {{ .Scratch.Set "liClass" "menu__items__item" }}
         {{ .Scratch.Set "aClass" "menu__items__item__link" }}
         {{ partial "lang-link.html" . }}
+
     </ul>
 </nav>

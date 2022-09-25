@@ -1,5 +1,12 @@
 {{ define "main" }}
 <main class="content">
+	<section class="section">
+
+	<h1 class="contact__title">{{ .Params.inpagetitle }}</h1>
+    <p class="contact__content">{{ .Description }}</p>
+
+	{{ .Content }}
+
 	{{ if ( eq .Page.Type "faqs" ) }}
 		{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "faqs" ) }}
 
@@ -9,5 +16,6 @@
 
 		{{ template "_internal/pagination.html" . }}
 	{{ end }}
+	</section>
 </main>
 {{ end }}
