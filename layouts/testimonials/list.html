@@ -1,5 +1,6 @@
 {{ define "main" }}
 <main class="content">
+	<section class="section">
 
 	<h1 class="contact__title">{{ .Title }}</h1>
     <p class="contact__content">{{ .Description }}</p>
@@ -15,5 +16,6 @@
 
 		{{ template "_internal/pagination.html" . }}
 	{{ end }}
+	</section>
 </main>
 {{ end }}

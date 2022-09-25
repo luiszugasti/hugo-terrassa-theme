@@ -769,10 +769,10 @@ main > p > img, section > div > p > img {
   animation: focus 0.95s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   justify-self: center;
   grid-row-start:1;
+  border-radius: 15px;
 }
 
 .about_me__img2 {
-  max-width: 80%;
   display:block;
   animation: focus 0.95s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   justify-self: center;
