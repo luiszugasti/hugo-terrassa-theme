@@ -18,7 +18,10 @@ find the current language, we exclude it! */}}
         {{ $lang := (lower (default .Lang .Site.Language.LanguageName))}}
         {{ if eq $.Site.Language.LanguageName "English" }}
             <li class="{{ $liClass }}" aria-label="{{ T $lang }}">
-                <a class="{{ $aClass }}" href="{{ .Permalink }}">{{ T $lang }}</a>
+                <a class="{{ $aClass }}" href="{{ .Permalink }}">{{ T $lang }}
+                    <img src="{{ $.Site.BaseURL }}{{printf "/images/site/"}}{{ $lang }}{{printf " flag.png" }}"
+                    title="{{ T $lang }} flag" class="header__language__icon">
+                </a>
             </li>
         {{ end }}
         {{ if eq $.Site.Language.LanguageName "Espanol" }}
