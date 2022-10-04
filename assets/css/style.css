@@ -29,6 +29,12 @@
   vertical-align: middle;
   width: 100%;
 }
+
+.header__language__icon {
+  padding-left: 5px;
+  display: inline;
+  width: 1em;
+}
 /* #endregion */
 
 /* #region MENU */
@@ -639,7 +645,7 @@
 }
 /* #endregion */
 
-/* 404 */
+/* #region 404 */
 .notfound {
   align-items: center;
   display: block;
@@ -651,7 +657,9 @@
   font-size: var(--subtitle);
 }
 
-/* COPY */
+/* #endregion */
+
+/* #region COPY */
 .copy {
   align-items: center;
   display: flex;
@@ -667,20 +675,26 @@
   text-align: center;
 }
 
-/* AUTHOR */
+/* #endregion */
+
+/* #region AUTHOR */
 .author {
   font-size: 0.95rem;
   font-weight: 400;
 }
 
-/* DATE */
+/* #endregion */
+
+/* #region DATE */
 .date {
   font-size: 0.95rem;
   font-weight: 400;
   margin: 0 0 0.75rem 0;
 }
 
-/* TAGS */
+/* #endregion */
+
+/* #region TAGS */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -690,6 +704,8 @@
 .tags__tag {
   margin-right: 0.75rem;
 }
+
+/* #endregion */
 
 /* RIPPLE */
 .ripple-btn {
