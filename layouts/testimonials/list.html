@@ -10,7 +10,7 @@
 	{{ if ( eq .Page.Type "testimonials" ) }}
 		{{ $paginator := .Paginate (where .Data.Pages "Type" "testimonial" ) }}
 
-		{{ range $paginator.Pages.ByTitle }}
+		{{ range $paginator.Pages.ByWeight }}
 		{{ partial "testimonials/testimonial.html" . }}
 		{{ end }}
 
