@@ -773,6 +773,7 @@ main > p > img, section > div > p > img {
   margin: 1.75rem 14% 0.75rem;
   width: 100%;
   row-gap:30px;
+  hyphens: none;
 }
 
 .about_me__title {
