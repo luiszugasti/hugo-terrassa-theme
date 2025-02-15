@@ -8,7 +8,7 @@
 	{{ .Content }}
 
 	{{ if ( eq .Page.Type "faqs" ) }}
-		{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "faqs" ) }}
+		{{ $paginator := .Paginate (where .Data.Pages.ByWeight "Type" "faqs" ) }}
 
 		{{ range $paginator.Pages }}
 		{{ .Render "card" }}
